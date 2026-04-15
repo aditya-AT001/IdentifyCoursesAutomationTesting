@@ -40,6 +40,22 @@ export class EnterpriseFormPage
         await this.page.goto("https://www.coursera.org/business")
     }
 
+
+    async formFillUp()
+    {
+        await this.enterFirstName();
+        await this.enterLastName();
+        await this.enterEmail();
+        await this.enterMobileNo();
+        await this.selectOrgType();
+        await this.enterJobTitle();
+        await this.enterCompanyName();
+        await this.selectCompanySize();
+        await this.describeYourNeed();
+        await this.selectCountry();
+        await this.selectState();
+    }
+    
     async enterFirstName()
     {
         await this.firstName.fill("Himanshu");
