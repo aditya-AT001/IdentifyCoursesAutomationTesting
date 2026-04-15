@@ -1,0 +1,23 @@
+{
+  "name": "identifycourses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditya-AT001/IdentifyCoursesAutomationTesting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aditya-AT001/IdentifyCoursesAutomationTesting/issues"
+  },
+  "homepage": "https://github.com/aditya-AT001/IdentifyCoursesAutomationTesting#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
