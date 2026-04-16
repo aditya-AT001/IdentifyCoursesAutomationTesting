@@ -1,10 +1,11 @@
 import { Page, Locator } from '@playwright/test';
+import { HomePage } from './Homepage';
 
 export class LanguageLearningPage {
-  readonly page: Page;
-  readonly expandLanguageBtn: Locator;
-  readonly collapseLanguageBtn: Locator;
-  readonly languageItems: Locator;
+  private page: Page;
+  private expandLanguageBtn: Locator;
+  private collapseLanguageBtn: Locator;
+  private languageItems: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -17,9 +18,6 @@ export class LanguageLearningPage {
     this.languageItems = page.locator('//div[contains(@data-testid,"language")]');
   }
 
-  async navigate() {
-    await this.page.goto('https://www.coursera.org/browse/language-learning');
-  }
 
   levelCheckbox(level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Mixed') {
     return this.page.locator(`//div[contains(@data-testid,'${level}')]`);
