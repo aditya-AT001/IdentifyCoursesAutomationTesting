@@ -1,6 +1,6 @@
 import { Locator, Page, BrowserContext } from "@playwright/test";
-
-class FirstCourse{
+ 
+export class FirstCourse{
     private page:Page;
     private courses:Locator;
     private firstCourseName!:Locator;
@@ -14,16 +14,16 @@ class FirstCourse{
    this.firstCourseName=newTab.locator("span.css-wo322s");
    this.firstCourseRating=newTab.locator('span[aria-hidden="true"]').nth(5);
    this.firstCourseDuration=newTab.locator('//span[contains(text(),"hours")]');
-
+ 
   }
-
+ 
   async courseOne(context:BrowserContext){
     const [newTab]=await Promise.all([
         context.waitForEvent('page'),
         this.courses.nth(0).click()
     ])
     await newTab.waitForLoadState('domcontentloaded');
-    
+   
     this.newTabLocators(newTab);
     const name   = await this.firstCourseName.textContent();
         const rating = await this.firstCourseRating.textContent();
@@ -38,11 +38,8 @@ class FirstCourse{
         const hours = text.split(' ')[0];  
         totalHours += Number(hours);        
     }
-    console.log("First Course Duration", totalHours); 
-    await newTab.close(); 
-
-  }   
-}
-export{
-    FirstCourse
+    console.log("First Course Duration", totalHours);
+    await newTab.close();
+ 
+  }  
 }

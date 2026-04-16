@@ -1,12 +1,12 @@
 import { BrowserContext, Locator, Page } from "@playwright/test";
-
-class SecondCourse{
+ 
+export class SecondCourse{
     private page:Page;
     private courses:Locator;
     private secondCourseName!:Locator;
     private secondCourseRating!:Locator;
     private SecondCourseDuration!:Locator;
-
+ 
     constructor(page:Page){
         this.page=page;
         this.courses=page.locator(".cds-CommonCard-title.css-6ecy9b")
@@ -27,9 +27,9 @@ class SecondCourse{
         console.log("second course name ",name);
         const rating=await this.secondCourseRating.textContent();
         console.log("second course rating",rating);
-
+ 
         const duration=await this.SecondCourseDuration.all();
-        
+       
         let totalHours=0;
         for(let el of duration){
             const text=await el.textContent();
@@ -38,7 +38,4 @@ class SecondCourse{
         }
         console.log("Duration of second course ",totalHours);
     }
-}
-export{
-    SecondCourse
 }
