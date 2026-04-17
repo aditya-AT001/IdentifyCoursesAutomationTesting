@@ -29,13 +29,14 @@ test('List all available languages', async ({ page }) => {
 
   await languagePage.expandLanguageFilter();
 
-  await languagePage.logAllLanguages();
+  await languagePage.saveAllLanguagesToJson();
   const count = await languagePage.getLanguageCount();
 
   console.log('Total languages:', count);
 });
 
-const levels = ['Beginner', 'Intermediate', 'Advanced', 'Mixed'] as const;
+
+const levels = ["Beginner","Intermediate","Advanced","Mixed"] as const;
 
 for (const level of levels) {
   test(`Count languages in ${level} level`, async ({ page }) => {

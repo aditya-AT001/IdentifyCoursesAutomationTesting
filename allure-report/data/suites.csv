@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","11994","List all available languages","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","12392","Count languages in Advanced level","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","12738","Count languages in Beginner level","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","20628","validating error msg","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","11036","Count languages in Intermediate level","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","22186","webCourse Search","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""
+"","16283","Count languages in Mixed level","chromium","2026-04-17","passed","2026-04-17","","webdevSearch.spec.ts","",""

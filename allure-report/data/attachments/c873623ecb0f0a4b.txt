@@ -1,0 +1,6 @@
+First Course Name Introduction to HTML, CSS, & JavaScript
+First Course Rating 4.4
+First Course Duration 15
+second course name  Meta Full Stack Developer: Front-End & Back-End from Scratch Specialization
+second course rating 4.7
+Duration of second course  303
