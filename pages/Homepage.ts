@@ -13,8 +13,8 @@ class HomePage{
         this.exploreBtn=this.page.locator('//button[@data-testid="megamenu-explore-button"]');
         this.learnlink=this.page.locator('//a[@data-track-href="/browse/language-learning"]');
         this.enterpriseBtn=this.page.locator('//a[@data-click-key="front_page.front_page_story.click.navigation_meta_nav_Business"]');
-
-
+ 
+ 
     }
     async goTo(){
         await this.page.goto("https://www.coursera.org/");
@@ -27,11 +27,11 @@ class HomePage{
         await this.exploreBtn.click();
         await this.exploreBtn.waitFor();
         await this.learnlink.click();
-      
+     
     }
     async formValid(){
         this.enterpriseBtn.click();
-
+ 
     }
 }
 export{

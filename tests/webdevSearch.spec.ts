@@ -12,10 +12,10 @@ test("webCourse Search",async({page,context})=>{
    await  homePage.webCourse();
    const courseList=new CourseList(page);
    await courseList.filterLanandLevel();
-
+ 
    const firstCourse=new FirstCourse(page);
    await firstCourse.courseOne(context);
-
+ 
    const secondCourse=new SecondCourse(page);
    await secondCourse.secondCourse(context);
 })

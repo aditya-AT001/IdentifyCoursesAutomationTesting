@@ -1,5 +1,5 @@
 import {Page,expect,Locator} from '@playwright/test';
-
+ 
 export class EnterpriseFormPage
 {
     private page: Page;
@@ -16,8 +16,8 @@ export class EnterpriseFormPage
     private state:Locator;
     private errorMsg:Locator;
     private submit:Locator;
-    
-
+   
+ 
     constructor(page: Page) {
         this.page = page;
         this.firstName=page.locator("#FirstName");
@@ -49,77 +49,77 @@ export class EnterpriseFormPage
         await this.selectCountry();
         await this.selectState();
     }
-    
+   
     async enterFirstName()
     {
         await this.firstName.waitFor();
         await this.firstName.fill("Himanshu");
     }
-
+ 
     async enterLastName()
     {
         await this.lastName.fill("Kumar");
     }
-
+ 
     async enterEmail()
     {
         await this.email.fill("abcde");
     }
-
+ 
     async enterMobileNo()
     {
         await this.mobileNo.fill("7484815884");
     }
-
+ 
     async selectOrgType()
     {
         await this.orgType.click();
         await this.orgType.selectOption("Business");
     }
-
+ 
     async enterJobTitle()
     {
         await this.jobTitle.fill("Quality Engineer");
     }
-
+ 
     async enterCompanyName()
     {
         await this.companyName.fill("Cognizant");
     }
-
+ 
     async selectCompanySize()
     {
         await this.companySize.click();
         await this.companySize.selectOption("30001+");
     }
-
+ 
     async describeYourNeed()
     {
         await this.need.click();
         await this.need.selectOption("Courses for myself");
     }
-
+ 
     async selectCountry()
     {
         await this.country.click();
         await this.country.selectOption("India");
     }
-
+ 
     async selectState()
     {
         await this.state.click();
         await this.state.selectOption("Bihar");
     }
-
+ 
     async clickSubmitButton()
     {
         await this.submit.click();
     }
-
+ 
     async validateErrorMsg()
     {
         const msg=await this.errorMsg.innerText();
         console.log(msg);
     }
-
+ 
 }

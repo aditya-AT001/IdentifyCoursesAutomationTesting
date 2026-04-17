@@ -22,26 +22,26 @@ export class LanguageLearningPage {
   levelCheckbox(level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Mixed') {
     return this.page.locator(`//div[contains(@data-testid,'${level}')]`);
   }
-
+ 
   async selectLevel(level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Mixed') {
     const checkbox = this.levelCheckbox(level);
     await checkbox.waitFor();
     await checkbox.click();
   }
-
+ 
   async expandLanguageFilter() {
     await this.expandLanguageBtn.click();
     await this.languageItems.first().waitFor();
   }
-
+ 
   async collapseLanguageFilter() {
     await this.collapseLanguageBtn.click();
   }
-
+ 
   async getLanguageCount(): Promise<number> {
     return await this.languageItems.count();
   }
-
+ 
   async logAllLanguages() {
     const items = await this.languageItems.all();
     for (const el of items) {
