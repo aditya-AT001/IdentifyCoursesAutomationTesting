@@ -35,75 +35,26 @@ test('List all available languages', async ({ page }) => {
   console.log('Total languages:', count);
 });
 
-test('Count languages in Beginner level', async ({ page }) => {
-  const languagePage = new LanguageLearningPage(page);
-  const homePage=new HomePage(page);
-  await homePage.goTo();
-  await homePage.learning();
+const levels = ['Beginner', 'Intermediate', 'Advanced', 'Mixed'] as const;
 
- 
-  await languagePage.selectLevel('Beginner');
-  await languagePage.expandLanguageFilter();
+for (const level of levels) {
+  test(`Count languages in ${level} level`, async ({ page }) => {
+    const languagePage = new LanguageLearningPage(page);
+    const homePage = new HomePage(page);
 
-  const count = await languagePage.getLanguageCount();
-  console.log('Number of languages in Beginner level:', count);
+    await homePage.goTo();
+    await homePage.learning();
 
-  await languagePage.collapseLanguageFilter();
-  await languagePage.selectLevel('Beginner');
-});
+    await languagePage.selectLevel(level);
+    await languagePage.expandLanguageFilter();
 
-test('Count languages in Intermediate level', async ({ page }) => {
-  const languagePage = new LanguageLearningPage(page);
-  const homePage=new HomePage(page);
-  await homePage.goTo();
-  await homePage.learning();
+    const count = await languagePage.getLanguageCount();
+    console.log(`Number of languages in ${level} level:`, count);
 
- 
-  await languagePage.selectLevel('Intermediate');
-  await languagePage.expandLanguageFilter();
-
-  const count = await languagePage.getLanguageCount();
-  console.log('Number of languages in Intermediate level:', count);
-
-  await languagePage.collapseLanguageFilter();
-  await languagePage.selectLevel('Intermediate');
-});
-
-test('Count languages in Advanced level', async ({ page }) => {
-  const languagePage = new LanguageLearningPage(page);
-  const homePage=new HomePage(page);
-  await homePage.goTo();
-  await homePage.learning();
-
-  
-  await languagePage.selectLevel('Advanced');
-  await languagePage.expandLanguageFilter();
-
-  const count = await languagePage.getLanguageCount();
-  console.log('Number of languages in Advanced level:', count);
-
-  await languagePage.collapseLanguageFilter();
-  await languagePage.selectLevel('Advanced');
-});
-
-test('Count languages in Mixed level', async ({ page }) => {
-  const languagePage = new LanguageLearningPage(page);
-  const homePage=new HomePage(page);
-  await homePage.goTo();
-  await homePage.learning();
-
- 
-  await languagePage.selectLevel('Mixed');
-  await languagePage.expandLanguageFilter();
-
-  const count = await languagePage.getLanguageCount();
-  console.log('Number of languages in Mixed level:', count);
-
-  await languagePage.collapseLanguageFilter();
-  await languagePage.selectLevel('Mixed');
-});
-
-
+    await languagePage.collapseLanguageFilter();
+    await languagePage.selectLevel(level);
+  });
+}
 
 
 test("validating error msg",async({page})=>{
