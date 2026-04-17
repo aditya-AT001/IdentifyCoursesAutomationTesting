@@ -1,5 +1,5 @@
 import{Locator, Page} from "@playwright/test";
-export class HomePage{
+class HomePage{
     private page:Page;
     private webSearch:Locator;
     private searchBtn:Locator;
@@ -33,4 +33,7 @@ export class HomePage{
         this.enterpriseBtn.click();
  
     }
+}
+export{
+    HomePage
 }

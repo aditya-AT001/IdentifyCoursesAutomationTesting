@@ -1,12 +1,12 @@
 import { Page, Locator } from '@playwright/test';
 import { HomePage } from './Homepage';
- 
+
 export class LanguageLearningPage {
   private page: Page;
   private expandLanguageBtn: Locator;
   private collapseLanguageBtn: Locator;
   private languageItems: Locator;
- 
+
   constructor(page: Page) {
     this.page = page;
     this.expandLanguageBtn = page.locator(
@@ -17,8 +17,8 @@ export class LanguageLearningPage {
     );
     this.languageItems = page.locator('//div[contains(@data-testid,"language")]');
   }
- 
- 
+
+
   levelCheckbox(level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Mixed') {
     return this.page.locator(`//div[contains(@data-testid,'${level}')]`);
   }

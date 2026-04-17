@@ -34,7 +34,7 @@ export class EnterpriseFormPage
         this.errorMsg=page.locator("#ValidMsgEmail");
         this.submit=page.locator('//button[text()="Submit"]');
     }
-   
+    
     async formFillUp()
     {
         await this.enterFirstName();
