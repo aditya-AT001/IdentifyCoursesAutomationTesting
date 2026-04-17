@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
-import { HomePage } from './Homepage';
+import fs from 'fs';
+import path from 'path';
 
 export class LanguageLearningPage {
   private page: Page;
@@ -42,10 +43,18 @@ export class LanguageLearningPage {
     return await this.languageItems.count();
   }
  
-  async logAllLanguages() {
+  async saveAllLanguagesToJson(fileName = 'languages.json'): Promise<void> {
     const items = await this.languageItems.all();
+    const languages: string[] = [];
+
     for (const el of items) {
-      console.log(await el.innerText());
+      const text = (await el.innerText()).trim();
+      languages.push(text);
+      console.log(text); // optional
     }
+
+    const filePath = path.resolve(__dirname,'../testData',fileName);
+
+    fs.writeFileSync(filePath,JSON.stringify({total: languages.length,languages},null,2),'utf-8');
   }
 }
