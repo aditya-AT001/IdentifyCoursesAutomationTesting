@@ -34,13 +34,7 @@ export class EnterpriseFormPage
         this.errorMsg=page.locator("#ValidMsgEmail");
         this.submit=page.locator('//button[text()="Submit"]');
     }
-
-    async goto()
-    {
-        await this.page.goto("https://www.coursera.org/business")
-    }
-
-
+    
     async formFillUp()
     {
         await this.enterFirstName();
@@ -58,6 +52,7 @@ export class EnterpriseFormPage
     
     async enterFirstName()
     {
+        await this.firstName.waitFor();
         await this.firstName.fill("Himanshu");
     }
 
