@@ -1,2 +1,0 @@
-Must be valid email.
-example@yourdomain.com
