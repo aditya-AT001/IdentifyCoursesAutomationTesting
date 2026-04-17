@@ -5,7 +5,7 @@ export class LanguageLearningPage {
   readonly expandLanguageBtn: Locator;
   readonly collapseLanguageBtn: Locator;
   readonly languageItems: Locator;
-
+ 
   constructor(page: Page) {
     this.page = page;
     this.expandLanguageBtn = page.locator(
